@@ -1,8 +1,7 @@
 Cuba.define do
   on get do
     on root do
-      res.write '<p>Danos un código postal y te regresamos la colonia, municipio y estado.
-                 <p>Más información en <a href="https://rapidapi.com/acrogenesis/api/mexico-zip-codes">https://rapidapi.com/acrogenesis/api/mexico-zip-codes</a></p>'
+      res.write ''
     end
 
     on 'codigo_postal/:codigo_postal' do |codigo_postal|
