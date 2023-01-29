@@ -12,6 +12,8 @@ require './models/postal_code'
 require './presenters/postal_codes'
 require './authentication/token_strategy'
 
+puts ENV
+
 if ENV['VALIDATE_HEADER']
   Warden::Strategies.add(:token, Authentication::TokenStrategy)
   use Warden::Manager do |manager|
