@@ -3,6 +3,9 @@ FROM ruby:3.1-slim
 ENV RACK_ENV=production
 ENV LANG=en_US.UTF-8
 
+ARG VALIDATE_HEADER
+ARG VALIDATE_HEADER_VALUE
+
 RUN apt update && apt install -y \
   build-essential libpq-dev  \
   && rm -rf /var/lib/apt/lists/*
