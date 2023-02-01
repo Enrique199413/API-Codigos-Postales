@@ -28,15 +28,15 @@ module PostalCodes
   end
 
   def self.prepare_locations_json(locations, code, shared_data)
-    { 'error': false,
-      'data': { 'codigo_postal' => code,
+    { 'error' => false,
+      'data' => { 'codigo_postal' => code,
       'municipio' => shared_data[0],
       'estado' => shared_data[1],
       'colonias' => locations }}
   end
 
   def self.prepare_postal_codes_json(codes)
-    { 'error': false, 'data': {'codigos_postales' => codes }}
+    { 'error' => false, 'data' => {'codigos_postales' => codes }}
   end
 
   def self.serialize(data)
