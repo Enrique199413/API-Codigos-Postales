@@ -1,7 +1,13 @@
 Cuba.define do
   on get do
     on root do
-      res.write ''
+      res.headers['Cache-Control'] = 'max-age=525600, public'
+      res.headers['Content-Type'] = 'application/json; charset=utf-8'
+      res.headers['Access-Control-Allow-Origin'] = '*'
+      res.write {
+        'error' => true,
+        'data' => {}
+      }
     end
 
     on 'codigo_postal/:codigo_postal' do |codigo_postal|
