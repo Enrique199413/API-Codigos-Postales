@@ -7,7 +7,7 @@ Cuba.define do
       res.write {
         'error' => true,
         'data' => {}
-      }
+      }.to_json
     end
 
     on 'codigo_postal/:codigo_postal' do |codigo_postal|
