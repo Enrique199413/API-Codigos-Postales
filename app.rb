@@ -4,10 +4,11 @@ Cuba.define do
       res.headers['Cache-Control'] = 'max-age=525600, public'
       res.headers['Content-Type'] = 'application/json; charset=utf-8'
       res.headers['Access-Control-Allow-Origin'] = '*'
-      res.write {
+      resultado = {
         'error' => true,
         'data' => {}
-      }.to_json
+      }
+      res.write resultado.to_json
     end
 
     on 'codigo_postal/:codigo_postal' do |codigo_postal|
