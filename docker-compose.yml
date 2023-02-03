@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+  api:
+    build: .
+    restart: always
+    environment:
+      VALIDATE_HEADER: FC
+      VALIDATE_HEADER_VALUE: secreto
+      DATABASE_USERNAME: root
+      DATABASE_PASSWORD: n0m3l0s3
+      DATABASE_HOST: db
+      RACK_ENV: development
+    links:
+      - db
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    expose:
+      - 3000
+  db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: n0m3l0s3
+      POSTGRES_DB: api-codigos-postales
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+
+  pg-adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
+    depends_on:
+      - db

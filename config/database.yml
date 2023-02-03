@@ -4,4 +4,6 @@ development:
   pool: 5
   timeout: 5000
   database: api-codigos-postales
-  host: localhost
+  host: db
+  username: root
+  password: n0m3l0s3

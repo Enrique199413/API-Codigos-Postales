@@ -6,6 +6,16 @@
 Dado un código postal, regresa un arreglo con las colonia, municipio y estado perteneciente al código postal.
 Además se pueden realizar búsquedas de códigos postales usando los números iniciales.
 
+## Ejecuta en local
+
+* Dentro de la raiz del projecto ejecuta:
+* `docker-compose build`
+* `docker-compose up` (esto se queda ejecutando siempre, para terminar TODOS los contenedores, solo preciona ctrl c)
+* En otra terminal, ejecuta los siguientes comandos
+  * `docker-compose exec api rake db:migrate`
+  * `docker-compose exec api rake sepomex:update`
+* Abre tu terminal en `localhost:3000`
+
 ## Sube la app a heroku
 1) Da click en el botón `Deploy to Heroku` y sigue los pasos.
 2) Al terminar corre `heroku run rake sepomex:update`.
